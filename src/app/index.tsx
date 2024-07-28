@@ -2,12 +2,27 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Link } from "expo-router";
+import { AntDesign } from "@expo/vector-icons";
+import FoodListItem from "@/components/FoodItemList";
+
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Text>Welcome to React </Text>
-      <Link href="/dashboard">Go to Dashboard</Link>
-      <StatusBar style="auto" />
+      {/* FOOD item view*/}
+      <FoodListItem
+        item={{
+          label: "Apple",
+          cal: 95,
+          brand: "Dole",
+        }}
+      />
+      <FoodListItem
+        item={{
+          label: "Banana",
+          cal: 105,
+          brand: "Dole",
+        }}
+      />
     </View>
   );
 }
@@ -15,8 +30,10 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f0f0f0",
-    alignItems: "center",
+    backgroundColor: "#fff",
     justifyContent: "center",
+    padding: 10,
+    gap: 7,
   },
 });
+
